@@ -6,10 +6,10 @@ Este projeto implementa uma solução **Retrieval-Augmented Generation (RAG)** p
 
 ## 👥 Integrantes
 
-* **Caio César Farias da Silva** - [Sua Função ou Papel no Projeto, ex: Desenvolvedor Principal / Especialista em NLP]
-* **Tarcísio Barbosa da Costa** - [Função ou Papel, ex: Analista de Dados / Desenvolvedor de Interface]
-* **Victor Henrique dos Santos Oliveira** - [Função ou Papel, ex: Pesquisador / Documentação]
-* *(Adicione mais nomes conforme necessário)*
+* **Caio César Farias da Silva**
+* **Tarcísio Barbosa da Costa**
+* **Victor Henrique dos Santos Oliveira** 
+
 
 ---
 
@@ -40,8 +40,6 @@ Este projeto foi desenvolvido utilizando as seguintes tecnologias e bibliotecas 
 * **NLTK**: Kit de ferramentas de Processamento de Linguagem Natural, empregado para tokenização de texto.
 * **Rank-BM25**: Implementação do algoritmo BM25 para a fase de recuperação de documentos (ranking de relevância).
 * **Hugging Face Transformers**: Biblioteca para acesso e utilização de modelos de linguagem pré-treinados.
-* **[Nome do LLM externo, ex: Google Gemini / OpenAI GPT-3.5 Turbo]**: Modelo de linguagem grande utilizado para a geração das respostas (via API).
-    *(Se você ainda estiver usando o T5 local, ajuste esta linha para: **T5 Fine-tuned (pt-br)**)*
 
 ---
 
