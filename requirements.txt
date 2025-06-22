@@ -1,0 +1,6 @@
+streamlit
+PyMuPDF
+nltk
+rank_bm25
+transformers
+torch

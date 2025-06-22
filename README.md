@@ -1,2 +1,38 @@
-[![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-22041afd0340ce965d47ae6ef1cefeee28c7c493a6346c4f15d667ab976d596c.svg)](https://classroom.github.com/a/uwEaPVB2)
-[![Open in Codespaces](https://classroom.github.com/assets/launch-codespace-2972f46106e565e64193e422d61a12cf1da4916b45550586e14ef0a7c637dd04.svg)](https://classroom.github.com/open-in-codespaces?assignment_repo_id=19734853)
+# 🤖 Chatbot RAG - PPC de Licenciatura em Computação (UFRPE)
+
+Este projeto implementa uma solução **Retrieval-Augmented Generation (RAG)** para responder perguntas com base no Projeto Pedagógico do Curso (PPC) de Licenciatura em Computação da UFRPE.
+
+---
+
+## 📚 Base utilizada
+
+[PPC - Licenciatura em Computação](http://www.lc.ufrpe.br/sites/ww2.lc.ufrpe.br/files/PPC-LC-atualizao.pdf)
+
+---
+
+## 🚀 Tecnologias e Bibliotecas
+
+- Python
+- Streamlit
+- PyMuPDF (extração de texto do PDF)
+- NLTK (tokenização)
+- BM25 (Rank-BM25)
+- Transformers (HuggingFace)
+- T5 Fine-tuned (pt-br)
+
+---
+
+## 📦 Estrutura do Projeto
+
+```bash
+rag_ppc/
+├── app.py                      # Funções centrais: extração, BM25, resposta
+├── data/
+│   └── PPC-LC-atualizao.pdf    # Base de dados utilizada
+├── notebooks/
+│   └── analise_inicial.ipynb   # Análise exploratória dos dados
+├── requirements.txt            # Dependências do projeto
+├── README.md                   # Instruções do projeto
+├── .gitignore
+└── streamlit_app/
+    └── chatbot_interface.py    # Interface do chatbot
