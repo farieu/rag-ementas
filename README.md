@@ -10,7 +10,6 @@ Este projeto implementa uma solução **Retrieval-Augmented Generation (RAG)** p
 * **Tarcísio Barbosa da Costa**
 * **Victor Henrique dos Santos Oliveira** 
 
-
 ---
 
 ## 📚 Base de Conhecimento Utilizada
