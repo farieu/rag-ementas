@@ -49,13 +49,11 @@ A organização do projeto segue uma estrutura modular para facilitar o desenvol
 
 ```bash
 rag_ppc/
-├── app.py                      # Contém as funções centrais de processamento do PDF,
-│                               # configuração do BM25 e a lógica de interação com o LLM.
+├── app.py                      # Contém as funções centrais de processamento do PDF, configuração do BM25 e a lógica de interação com o LLM.
 ├── data/
 │   └── PPC-LC-atualizao.pdf    # O arquivo PDF original que serve como base de conhecimento.
 ├── notebooks/
-│   └── analise_inicial.ipynb   # Notebook Jupyter para a análise exploratória inicial dos dados
-│                               # e validação das etapas de pré-processamento.
+│   └── colab.ipynb             # Notebook Jupyter para a análise exploratória inicial dos dados e validação das etapas de pré-processamento.
 ├── requirements.txt            # Lista de todas as dependências Python necessárias para o projeto.
 ├── README.md                   # Este arquivo, contendo a descrição, instruções e detalhes do projeto.
 ├── .gitignore                  # Arquivo para especificar arquivos e diretórios a serem ignorados pelo Git.

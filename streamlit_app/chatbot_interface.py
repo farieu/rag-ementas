@@ -45,7 +45,6 @@ if "chat_history" not in st.session_state:
     st.session_state.chat_history = []
 
 # --- Exibição do Histórico de Chat (acima da caixa de entrada) ---
-# Usamos um container para o histórico para que ele possa rolar independentemente
 chat_placeholder = st.container(height=500)  # Define uma altura fixa para o histórico
 
 with chat_placeholder:
@@ -56,8 +55,6 @@ with chat_placeholder:
             st.markdown(message["content"])
 
 # --- Caixa de Entrada Fixa na Parte Inferior ---
-# st.chat_input é o componente mais adequado para isso, ele já "gruda" embaixo
-# Ele retorna a mensagem e reseta o campo automaticamente após o envio
 prompt = st.chat_input("Digite sua pergunta aqui...")
 
 if prompt:
@@ -70,8 +67,6 @@ if prompt:
             st.markdown(prompt)
 
     # --- Lógica de Geração da Resposta ---
-    # As linhas de depuração estão aqui. Mantenha-as durante o desenvolvimento.
-    # Considere colocá-las em um expander (st.expander) para não poluir a interface.
     st.sidebar.markdown("---")  # Para depuração na sidebar
     st.sidebar.markdown("**DEBUG INFO:**")
     st.sidebar.markdown(f"Pergunta: {prompt}")
