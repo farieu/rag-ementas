@@ -23,7 +23,8 @@ from nltk.tokenize import word_tokenize
 nltk.download("punkt")
 
 # Carregar dados e modelo
-texto = extrair_texto_pdf("data/PPC-LC-atualizao.pdf")
+caminho_pdf = os.path.join(parent_dir, "data", "PPC-LC-atualizao.pdf")
+texto = extrair_texto_pdf(caminho_pdf)
 paragrafos = preparar_paragrafos(texto)
 tokenizados = tokenizar_paragrafos(paragrafos)
 bm25 = configurar_bm25(tokenizados)
@@ -37,24 +38,20 @@ st.set_page_config(
     initial_sidebar_state="collapsed"  # Pode ser útil para um chatbot
 )
 
-st.title("🤖 Chatbot RAG - PPC Licenciatura em Computação (UFRPE)")
+st.title("RAG - PPC Licenciatura em Computação (UFRPE)")
 st.markdown("Faça uma pergunta sobre o Projeto Pedagógico do Curso de Licenciatura em Computação:")
 
-# --- Inicialização do Histórico de Chat ---
 if "chat_history" not in st.session_state:
     st.session_state.chat_history = []
 
-# --- Exibição do Histórico de Chat (acima da caixa de entrada) ---
-chat_placeholder = st.container(height=500)  # Define uma altura fixa para o histórico
+chat_placeholder = st.container(height=500)
 
 with chat_placeholder:
     for message in st.session_state.chat_history:
-        # st.chat_message é o novo componente do Streamlit para interfaces de chat
-        # Ele automaticamente gerencia o ícone e o estilo
+
         with st.chat_message(message["role"]):
             st.markdown(message["content"])
 
-# --- Caixa de Entrada Fixa na Parte Inferior ---
 prompt = st.chat_input("Digite sua pergunta aqui...")
 
 if prompt:

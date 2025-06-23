@@ -14,7 +14,7 @@ def extrair_texto_pdf(caminho_pdf):
         texto += pagina.get_text()
     return texto
 
-def preparar_paragrafos(texto, chunk_size=500, chunk_overlap=50):
+def preparar_paragrafos(texto, chunk_size=500, chunk_overlap=150):
     # Adaptação mais robusta de chunking
     chunks = []
     for i in range(0, len(texto), chunk_size - chunk_overlap):
@@ -30,13 +30,12 @@ def configurar_bm25(tokenizados):
     return BM25Okapi(tokenizados)
 
 def carregar_modelo():
-    # Carregue o tokenizer junto com o modelo para controle de tokens
     tokenizer = AutoTokenizer.from_pretrained("pierreguillou/t5-base-qa-squad-v1.1-portuguese")
     model_pipeline = pipeline("text2text-generation", model="pierreguillou/t5-base-qa-squad-v1.1-portuguese")
-    return model_pipeline, tokenizer # Retorne ambos
+    return model_pipeline, tokenizer 
 
-def responder(pergunta, bm25, paragrafos, modelo_e_tokenizer, top_n=5, max_context_tokens=400): # Adicione max_context_tokens
-    modelo, tokenizer = modelo_e_tokenizer # Desempacote modelo e tokenizer
+def responder(pergunta, bm25, paragrafos, modelo_e_tokenizer, top_n=5, max_context_tokens=400): 
+    modelo, tokenizer = modelo_e_tokenizer 
 
     tokens_pergunta = word_tokenize(pergunta.lower())
     documentos_recuperados = bm25.get_top_n(tokens_pergunta, paragrafos, n=top_n)
@@ -46,7 +45,7 @@ def responder(pergunta, bm25, paragrafos, modelo_e_tokenizer, top_n=5, max_conte
 
     # Iterar sobre os documentos recuperados e adicionar ao contexto até atingir o limite de tokens
     for doc in documentos_recuperados:
-        # Codifique o documento para ver quantos tokens ele tem
+        # Codifica o documento para ver quantos tokens ele tem
         doc_tokens = tokenizer.encode(doc, add_special_tokens=False)
 
         # Se adicionar este documento exceder o limite, pare
