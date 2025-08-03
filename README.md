@@ -1,7 +1,7 @@
 # 🗃 RAG - PPC de Licenciatura em Computação (UFRPE)
 
 Este projeto implementa uma solução **Retrieval-Augmented Generation** para responder perguntas com base no Projeto Pedagógico do Curso de Licenciatura em Computação da UFRPE. O objetivo é fornecer respostas eficientes e precisas, combinando a recuperação de informações de um documento específico com a capacidade de geração de um modelo de linguagem.
----
+
 
 ## 📚 Base de Conhecimento Utilizada
 
